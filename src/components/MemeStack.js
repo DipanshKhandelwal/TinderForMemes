@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
-import { Header } from './src/components/common';
 import CardStack, { Card } from 'react-native-card-stack-swiper';
 
 export default class MemeStack extends React.Component {
@@ -8,7 +7,6 @@ export default class MemeStack extends React.Component {
   render() {
     return (
       <View style={{flex:1}}>
-        <Header name="Tinder for Memes"/>
         <CardStack
           style={styles.content}
 
@@ -36,17 +34,17 @@ export default class MemeStack extends React.Component {
             <TouchableOpacity style={[styles.button,styles.red]} onPress={()=>{
               this.swiper.swipeLeft();
             }}>
-              <Image source={require('./src/images/red.png')} resizeMode={'contain'} style={{ height: 62, width: 62 }} />
+              <Image source={require('../images/red.png')} resizeMode={'contain'} style={{ height: 62, width: 62 }} />
             </TouchableOpacity>
             <TouchableOpacity style={[styles.button,styles.orange]} onPress={() => {
               this.swiper.goBackFromLeft();
             }}>
-              <Image source={require('./src/images/back.png')} resizeMode={'contain'} style={{ height: 32, width: 32, borderRadius: 5 }} />
+              <Image source={require('../images/back.png')} resizeMode={'contain'} style={{ height: 32, width: 32, borderRadius: 5 }} />
             </TouchableOpacity>
             <TouchableOpacity style={[styles.button,styles.green]} onPress={()=>{
               this.swiper.swipeRight();
             }}>
-              <Image source={require('./src/images/green.png')} resizeMode={'contain'} style={{ height: 62, width: 62 }} />
+              <Image source={require('../images/green.png')} resizeMode={'contain'} style={{ height: 62, width: 62 }} />
             </TouchableOpacity>
           </View>
 
@@ -69,7 +67,7 @@ const styles = StyleSheet.create({
   },
   card:{
     width: 320,
-    height: 470,
+    height: 450,
     backgroundColor: '#FE474C',
     borderRadius: 5,
     shadowColor: 'rgba(0,0,0,0.5)',
