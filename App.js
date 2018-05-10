@@ -14,7 +14,7 @@ export default class App extends React.Component {
       authDomain: "tinderformemes-ec041.firebaseapp.com",
       databaseURL: "https://tinderformemes-ec041.firebaseio.com",
       projectId: "tinderformemes-ec041",
-      storageBucket: "",
+      storageBucket: "tinderformemes-ec041.appspot.com",
       messagingSenderId: "1030706858467"
     });  
   }
