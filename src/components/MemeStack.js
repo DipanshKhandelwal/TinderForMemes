@@ -36,6 +36,14 @@ class MemeStack extends React.Component {
           onSwipedLeft={() => console.log('onSwipedLeft')}
         >
           <Card style={[styles.card, styles.card1]}><Text style={styles.label}>A</Text></Card>
+          
+          <Card style={[styles.card, styles.card1]}>
+            <Image
+              source={{uri: 'https://firebasestorage.googleapis.com/v0/b/tinderformemes-ec041.appspot.com/o/memes%2Fmeme.jpg?alt=media&token=3f38193b-e049-4590-9f0f-f86e35eeda3a'}}
+              resizeMode={'contain'}
+              style={{ height: 450, width: 320 }} />
+          </Card>
+          
           <Card style={[styles.card, styles.card2]} onSwipedLeft={() => alert('onSwipedLeft')}><Text style={styles.label}>B</Text></Card>
           <Card style={[styles.card, styles.card1]}><Text style={styles.label}>C</Text></Card>
           <Card style={[styles.card, styles.card2]}><Text style={styles.label}>D</Text></Card>
