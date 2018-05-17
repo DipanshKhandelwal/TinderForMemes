@@ -5,8 +5,7 @@ const INITIAL_STATE = {};
 export default (state=INITIAL_STATE, action) => {
     switch (action.type) {
         case MEME_FETCH_SUCCESS:
-            console.log(action.payload);
-            return null;
+            return action.payload;
 
         default:
             return state;

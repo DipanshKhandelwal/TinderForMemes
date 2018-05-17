@@ -6,7 +6,7 @@ export const memesFetch = () => {
     const { currentUser } = firebase.auth();
     
     return (dispatch) => {
-        firebase.database().ref(`/users/${ currentUser.uid }`)
+        firebase.database().ref(`/users/${ currentUser.uid }/memes`)
         .on( "value",
             snapshot => {
                 dispatch({

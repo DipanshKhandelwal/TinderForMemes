@@ -1,8 +1,23 @@
+import _ from 'lodash';
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import CardStack, { Card } from 'react-native-card-stack-swiper';
+import { connect } from 'react-redux';
+import { memesFetch } from '../actions';
 
-export default class MemeStack extends React.Component {
+class MemeStack extends React.Component {
+
+  componentWillMount() {
+    this.props.memesFetch();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.createDataSource(nextProps);
+  }
+
+  createDataSource({ memes }) {
+    console.log(memes);
+  }
 
   render() {
     return (
@@ -139,3 +154,13 @@ const styles = StyleSheet.create({
     borderColor:'#fd267d',
   }
 });
+
+const mapStatetoProps = state => {
+  const memes = _.map(state.memes, (val, uid) => {
+      return {...val, uid};
+  });
+
+  return { memes };
+};
+
+export default connect( mapStatetoProps, {memesFetch} )(MemeStack);
