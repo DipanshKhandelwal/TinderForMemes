@@ -4,5 +4,5 @@ import MemeReducer from './MemeReducer';
 
 export default combineReducers({
     auth: AuthReducer,
-    meme: MemeReducer
+    memes: MemeReducer
 });
