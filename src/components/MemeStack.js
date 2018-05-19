@@ -11,16 +11,9 @@ class MemeStack extends React.Component {
     this.props.memesFetch();
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.createDataSource(nextProps);
-  }
-
-  createDataSource({ memes }) {
-    console.log(memes);
-  }
-
   render() {
     return (
+
       <View style={{flex:1}}>
         <CardStack
           style={styles.content}
@@ -35,22 +28,22 @@ class MemeStack extends React.Component {
           onSwiped={() => console.log('onSwiped')}
           onSwipedLeft={() => console.log('onSwipedLeft')}
         >
-          <Card style={[styles.card, styles.card1]}><Text style={styles.label}>A</Text></Card>
-          
-          <Card style={[styles.card, styles.card1]}>
-            <Image
-              source={{uri: 'https://firebasestorage.googleapis.com/v0/b/tinderformemes-ec041.appspot.com/o/memes%2Fmeme.jpg?alt=media&token=3f38193b-e049-4590-9f0f-f86e35eeda3a'}}
-              resizeMode={'contain'}
-              style={{ height: 450, width: 320 }} />
-          </Card>
-          
-          <Card style={[styles.card, styles.card2]} onSwipedLeft={() => alert('onSwipedLeft')}><Text style={styles.label}>B</Text></Card>
-          <Card style={[styles.card, styles.card1]}><Text style={styles.label}>C</Text></Card>
-          <Card style={[styles.card, styles.card2]}><Text style={styles.label}>D</Text></Card>
-          <Card style={[styles.card, styles.card1]}><Text style={styles.label}>E</Text></Card>
 
-        </CardStack>
+          {
+            this.props.memes.map(( item ) => {
+                return (
+                  <Card style={[styles.card, styles.card1]}>
+                    <Image
+                      source={{uri: item.link }}
+                      resizeMode={'contain'}
+                      style={{ height: 450, width: 320 }}
+                    />
+                  </Card>
+                );
+            })
+          }
 
+          </CardStack>
 
         <View style={styles.footer}>
           <View style={styles.buttonContainer}>
