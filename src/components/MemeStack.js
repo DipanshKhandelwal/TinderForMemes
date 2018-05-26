@@ -30,11 +30,11 @@ class MemeStack extends React.Component {
         >
 
           {
-            this.props.memes.map(( item ) => {
+            this.props.memes.map(( item, id ) => {
                 return (
                   <Card style={[styles.card, styles.card1]}>
                     <Image
-                      source={{uri: item.link }}
+                      source={{uri: item.url }}
                       resizeMode={'contain'}
                       style={{ height: 450, width: 320 }}
                     />
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
   },
   card:{
     width: 320,
-    height: 450,
+    height: 430,
     backgroundColor: '#FE474C',
     borderRadius: 5,
     shadowColor: 'rgba(0,0,0,0.5)',
@@ -157,8 +157,8 @@ const styles = StyleSheet.create({
 });
 
 const mapStatetoProps = state => {
-  const memes = _.map(state.memes, (val, uid) => {
-      return {...val, uid};
+  const memes = _.map(state.memes, (val, id) => {
+      return {...val, id};
   });
 
   return { memes };
