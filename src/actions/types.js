@@ -5,3 +5,4 @@ export const LOGIN_USER_FAIL = 'login_user_fail';
 export const LOGIN_USER = 'login_user';
 
 export const MEME_FETCH_SUCCESS = 'meme_fetch_success';
+export const MEME_CREATE = 'meme_create';
