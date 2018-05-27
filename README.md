@@ -17,3 +17,11 @@ git clone https://github.com/DipanshKhandelwal/TinderForMemes.git
 cd TinderForMemes
 npm install
 npm start
+```
+
+### Screenshots
+<p align="center">
+  <img width="30%" src="/src/images/Login.png"/>
+  <img width="30%" src="/src/images/MemeStack.png"/>
+  <img width="30%" src="/src/images/ImageUpload.png"/>
+</p>
